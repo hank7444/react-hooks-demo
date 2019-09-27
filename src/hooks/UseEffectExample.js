@@ -71,9 +71,9 @@ export function Title() {
   useEffect(() => {
     document.title = `${name} | ${age}`;
   });
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
-    const handleResize = () => setHeight(window.innerHeight);
+    const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -96,8 +96,8 @@ export function Title() {
         <input type="text" value={age} onChange={handleAgeChange} />
       </section>
       <section className="row">
-        <span>Height</span>
-        <input type="text" value={height} disabled />
+        <span>Width</span>
+        <input type="text" value={width} disabled />
       </section>
     </Fragment>
   );
